@@ -1,0 +1,10 @@
+{ "name": "file-finder",
+  "version": "0.1.0",
+  "author": "Mike Vegeto <michael.vegeto@gmail.com>",
+  "description": "Searches directories recursively for files matching search strings",
+  "main": "./file-finder",
+  "engines": { "node": ">=0.8.0" },
+  "keywords": [ "search", "file", "find", "recursive" ],
+  "licenses": [ { "type": "MIT", "url": "http://raw.github.com/ZECTBynmo/file-finder/master/LICENSE" } ],
+  "repository": { "type": "git", "url": "http://github.com/ZECTBynmo/file-finder.git" }
+}
