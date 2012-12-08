@@ -28,11 +28,11 @@ var fs = require('fs');
 
 //////////////////////////////////////////////////////////////////////////
 // Recursively searches a directory for files with a given string in them
-FileFinder.findFile = function( directory, searchString, callback ) {
+FileFinder.findFiles = function( directory, searchString, callback ) {
 	log( "Searching directory " + directory + " recursively" );
 
 	if( searchString === undefined || searchString == "" ) {
-		log( "Error@FileFinder.findFile: Search string required")
+		log( "Error@FileFinder.findFiles: Search string required")
 		return callback( null, {} );
 	}
 
@@ -75,4 +75,4 @@ FileFinder.findFile = function( directory, searchString, callback ) {
 	      	});
 	    });
   	});
-}; // end FileFinder.findFile()
+}; // end FileFinder.findFiles()

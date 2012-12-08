@@ -15,7 +15,7 @@ Usage
 ```
 var FileFinder = require( 'file-finder' );
 
-FileFinder.findFile( directory, searchString, function(error, matchingFiles) {
+FileFinder.findFiles( directory, searchString, function(error, matchingFiles) {
 	...do some stuff with the files that matched the search string
 });
 ```
