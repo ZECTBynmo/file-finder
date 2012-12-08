@@ -1,5 +1,5 @@
 { "name": "file-finder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Mike Vegeto <michael.vegeto@gmail.com>",
   "description": "Searches directories recursively for files matching search strings",
   "main": "./file-finder",
