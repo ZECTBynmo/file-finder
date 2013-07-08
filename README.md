@@ -15,7 +15,12 @@ Usage
 ```
 var FileFinder = require( 'file-finder' );
 
-FileFinder.findFiles( directory, searchString, function(error, matchingFiles) {
+var options = {
+    searchSubDirectories : true
+}
+
+FileFinder.findFiles( directory, searchString, options, function(error, matchingFiles) {
 	...do some stuff with the files that matched the search string
 });
 ```
+
