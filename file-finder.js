@@ -28,7 +28,14 @@ var fs = require('fs');
 
 //////////////////////////////////////////////////////////////////////////
 // Recursively searches a directory for files with a given string in them
-FileFinder.findFiles = function( directory, searchString, callback ) {
+FileFinder.findFiles = function( directory, searchString, options, callback ) {
+    if (arguments.length == 3) { // if only three arguments were supplied
+        if (Object.prototype.toString.call(options) == "[object Function]") {
+            callback = options;
+            options = {};
+        }
+    }
+
 	log( "Searching directory " + directory + " recursively" );
 
 	if( searchString === undefined || searchString == "" ) {
@@ -36,7 +43,8 @@ FileFinder.findFiles = function( directory, searchString, callback ) {
 		return callback( null, {} );
 	}
 
-	var matches = [];
+	var matches = [],
+        searchSubDirectories = options.searchSubDirectories === undefined && true; //default to search subdirectories
 
 	// Read into the directory
   	fs.readdir(directory, function(err, files) {
@@ -53,8 +61,8 @@ FileFinder.findFiles = function( directory, searchString, callback ) {
 	    files.forEach(function(file) {
 	    	file = directory + '/' + file;
 	    	fs.stat( file, function( err, stat ) {
-		        if( stat && stat.isDirectory() ) {
-		          	FileFinder.findFile( file, searchString, function( err, res ) {
+		        if( stat && stat.isDirectory() && searchSubDirectories) {
+		          	FileFinder.findFiles( file, searchString, options, function( err, res ) {
 		            	matches = matches.concat(res);
 
 		            	numFilesRemaining -= 1;
