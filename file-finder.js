@@ -108,6 +108,11 @@ FileFinder.findFilesStats = function (directory, searchString, options, callback
 function populateFileStats(filesList, callback) {
     var itemCount = filesList.length;
     var fileInfoList = [];
+
+    if (itemCount === 0) {
+        return callback(null, filesList);
+    }
+
     filesList.forEach(function (file) {
         fs.stat(file, function (err, stats) {
             if (err) {
