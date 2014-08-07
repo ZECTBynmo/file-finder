@@ -14,3 +14,18 @@ FileFinder.findFiles( __dirname, "file-finder", {searchSubDirectories : false}, 
         console.log( "Base Directory Search: " + files[iFile] );
     }
 });
+
+
+// Print all files stata containing "file-finder" within the current directory and sub-directories
+FileFinder.findFilesStats( __dirname, "file-finder", function(err, files) {
+    for( var iFile=0; iFile<files.length; ++iFile ) {
+        console.log( "Subdirectory Search: " +  JSON.stringify(files[iFile]) );
+    }
+});
+
+// Print all files stats containing "file-finder" within the current directory only
+FileFinder.findFilesStats( __dirname, "file-finder", {searchSubDirectories : false}, function(err, files) {
+    for( var iFile=0; iFile<files.length; ++iFile ) {
+        console.log( "Base Directory Search: " + JSON.stringify(files[iFile]) );
+    }
+});
