@@ -99,16 +99,15 @@ FileFinder.findFilesStats = function (directory, searchString, options, callback
 
     FileFinder.findFiles(directory, searchString, options, function (err, results) {
         if (err) {
-            return callback(err);
+            callback(err, null);
         }
         populateFileStats(results, callback);
-    })
+    });
 };
 
 function populateFileStats(filesList, callback) {
     var itemCount = filesList.length;
     var fileInfoList = [];
-
     if (itemCount === 0) {
         return callback(null, filesList);
     }
