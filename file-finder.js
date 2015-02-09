@@ -100,8 +100,9 @@ FileFinder.findFilesStats = function (directory, searchString, options, callback
     FileFinder.findFiles(directory, searchString, options, function (err, results) {
         if (err) {
             callback(err, null);
+        } else {
+            populateFileStats(results, callback);
         }
-        populateFileStats(results, callback);
     });
 };
 

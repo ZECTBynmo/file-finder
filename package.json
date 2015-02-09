@@ -1,10 +1,39 @@
-{ "name": "file-finder",
-  "version": "0.1.2",
-  "author": "Mike Vegeto <michael.vegeto@gmail.com>",
+{
+  "name": "file-finder",
+  "version": "0.1.3",
+  "author": {
+    "name": "Mike Vegeto",
+    "email": "michael.vegeto@gmail.com"
+  },
   "description": "Searches directories recursively for files matching search strings",
   "main": "./file-finder",
-  "engines": { "node": ">=0.8.0" },
-  "keywords": [ "search", "file", "find", "recursive" ],
-  "licenses": [ { "type": "MIT", "url": "http://raw.github.com/ZECTBynmo/file-finder/master/LICENSE" } ],
-  "repository": { "type": "git", "url": "https://github.com/jaalfaro/file-finder.git" }
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "keywords": [
+    "search",
+    "file",
+    "find",
+    "recursive"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://raw.github.com/ZECTBynmo/file-finder/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaalfaro/file-finder.git"
+  },
+  "readme": "FileFinder\n==================\n\nThis module searches a directory recursively for a file \nthat matches some string key.\n\nInstallation\n==================\n```\nnpm install file-finder\n```\n\nUsage\n==================\n```\nvar FileFinder = require( 'file-finder' );\n\nvar options = {\n    searchSubDirectories : true\n}\n\nFileFinder.findFiles( directory, searchString, options, function(error, matchingFiles) {\n\t...do some stuff with the files that matched the search string\n});\n```\n\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/jaalfaro/file-finder/issues"
+  },
+  "homepage": "https://github.com/jaalfaro/file-finder",
+  "_id": "file-finder@0.1.3",
+  "_shasum": "22195e36a6ad52e5402dfeea662a8b0f4f098a47",
+  "_resolved": "git+https://github.com/jaalfaro/file-finder.git#561b997da92824f4aba063d2ad2e2dbf9e0cbf7d",
+  "_from": "file-finder@git+https://github.com/jaalfaro/file-finder.git#master"
 }
