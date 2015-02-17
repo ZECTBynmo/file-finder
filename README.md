@@ -24,3 +24,8 @@ FileFinder.findFiles( directory, searchString, options, function(error, matching
 });
 ```
 
+FileFinder.findFilesStats( directory, searchString, options, function(error, matchingFiles) {
+	...do some stuff with the files and the STATS that matched the search string
+});
+```
+

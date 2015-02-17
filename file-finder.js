@@ -107,6 +107,10 @@ FileFinder.findFilesStats = function (directory, searchString, options, callback
 };
 
 function populateFileStats(filesList, callback) {
+    //if no files found, we need to return no data.
+    if (!filesList){
+        return callback(null, null);
+    }
     var itemCount = filesList.length;
     var fileInfoList = [];
     if (itemCount === 0) {
